@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+library work;
+use work.matrix.all;
+
+entity ninecrossnine is
+port(
+	CLK:						in std_logic; --50MHz Clock
+	Reset:					in std_logic; --whenever this is high, intermatrix will be reset to 0
+	writeenable:			inout std_logic:='0'; --if high, data is written to RAM
+	Set_output:					in std_logic
+	);
+end ninecrossnine;
+
+architecture behave of ninecrossnine is
+	shared variable intermatrix: t_2d_array9; --array in which final matrix is stored
+	signal counter: unsigned(2 downto 0) :="000" ; --counter to create a slow clock of 10MHz
+	signal datavalue: std_logic_vector(7 DOWNTO 0); --signal to store values that go intro ram
+	signal writeaddress: std_logic_vector(7 DOWNTO 0) := "0000000"; --signal to store address to write in ram
+	signal clock_slow: std_logic:='0'; --slower clock
+	signal output_vector: vector; -- to simplify sending values to RAM
+	shared variable randomnumber: std_logic_vector(7 DOWNTO 0):= "01011110"; --initial random number
+	signal counter1: std_logic_vector(7 DOWNTO 0) := "00000000"; --counter to initialize values
+

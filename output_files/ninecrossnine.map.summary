@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Apr 11 02:38:09 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : ninecrossnine
+Top-level Entity Name : ninecrossnine
+Family : Cyclone IV E
+Total logic elements : 2,477
+    Total combinational functions : 2,445
+    Dedicated logic registers : 689
+Total registers : 689
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 1,024
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
